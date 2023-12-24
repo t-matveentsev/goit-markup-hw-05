@@ -547,7 +547,7 @@ button {
 
   transition: backgroud-color 150ms ease-in, fill 150ms ease-in;
 }
-
+.modal-btn:hover,
 .modal-btn:active {
   background-color: #404bbf;
   fill: white;
@@ -558,16 +558,18 @@ button {
 }
 .form-article {
   text-align: center;
+  margin-bottom: 16px;
+
   color: #2e2f42;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  margin-bottom: 16px;
 }
 
 .form-label {
   display: block;
   padding-bottom: 4px;
+
   color: #8e8f99;
   font-size: 12px;
   line-height: 1.166;
@@ -592,20 +594,23 @@ button {
   border-color: #4d5ae5;
 }
 .form-area {
-  resize: none;
   border-radius: 4px;
   min-width: 360px;
   min-height: 40px;
+  resize: none;
+
   border: 1px solid rgba(46, 47, 66, 0.4);
-  outline: transparent;
   transition: border-color 300ms ease-in;
+  outline: transparent;
 }
 .form-area::placeholder {
   padding: 8px 0px 0px 16px;
+
   font-size: 12px;
-  color: rgba(46, 47, 66, 0.4);
   line-height: 1.166;
   letter-spacing: 0.04em;
+
+  color: rgba(46, 47, 66, 0.4);
 }
 .form-icon {
   position: absolute;
@@ -659,7 +664,7 @@ button {
   line-height: 1.166;
   letter-spacing: 0.04em;
 
-  -webkit-user-select: none;
+  user-select: none;
 }
 
 .form-agreement-checkbox {
@@ -690,7 +695,5 @@ button {
 .checkbox:checked + .form-agreement-checkbox > .form-agreemen-icon {
   opacity: 1;
   transform: scale(1);
-}
-.span-privacy {
 }
 /* #endregion ============================== modal window */
