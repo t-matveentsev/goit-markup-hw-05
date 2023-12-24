@@ -35,6 +35,14 @@ ol {
   margin: 0;
   padding: 0;
 }
+input {
+  font-family: inherit;
+}
+button {
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+}
 
 /* відступи кожної секції */
 .section {
@@ -159,11 +167,9 @@ ol {
   margin-bottom: 48px;
 }
 
-.button {
+.main-button {
   color: white;
   background-color: #4d5ae5;
-  cursor: pointer;
-  font-family: "Roboto", sans-serif;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0.64px;
@@ -176,8 +182,8 @@ ol {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover,
-.button:focus {
+.main-button:hover,
+.main-button:focus {
   background-color: #404bbf;
 }
 /* #endregion */
@@ -409,9 +415,10 @@ ol {
   margin-right: 120px;
 }
 
-.footer-icon-box {
+.footer-icon-list {
   display: flex;
   gap: 16px;
+  margin-right: 80px;
 }
 .footer-text-media {
   margin-bottom: 16px;
@@ -420,7 +427,7 @@ ol {
   line-height: 24px;
   letter-spacing: 0.32px;
 }
-.footer-icon-box .icon {
+.icon {
   display: flex;
   fill: #f4f4fd;
   width: 40px;
@@ -431,8 +438,259 @@ ol {
   align-items: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-icon-box .icon:hover,
-.footer-icon-box .icon:focus {
+.footer-icon-list .icon:hover,
+.footer-icon-list .icon:focus {
   background-color: #31d0aa;
 }
+
+.footer-form-input {
+  width: 264px;
+  height: 40px;
+  padding: 5px;
+  background-color: inherit;
+
+  border-radius: 4px;
+  border: 1px solid #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  outline: transparent;
+}
+
+.form-subscribe {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  background-color: #4d5ae5;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+
+  min-width: 165px;
+  padding: 8px 24px;
+  border: none;
+  margin: auto;
+  border-radius: 4px;
+}
+.footer-form-input::placeholder {
+  padding-left: 16px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+}
+.form-btn-icon {
+  fill: white;
+}
 /* #endregion footer */ /* #endregion footer */
+
+/* #region ================================= modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 300ms ease-in, visibility 300ms ease-in;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.modal {
+  border-radius: 4px;
+  border: 1px solid #000;
+  background-color: #fcfcfc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  width: 408px;
+  min-height: 584px;
+}
+
+.modal-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-bottom: 24px;
+
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  transition: backgroud-color 150ms ease-in, fill 150ms ease-in;
+}
+
+.modal-btn:active {
+  background-color: #404bbf;
+  fill: white;
+}
+
+.close-icon {
+  color: #2e2f42;
+}
+.form-article {
+  text-align: center;
+  color: #2e2f42;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  padding-bottom: 4px;
+  color: #8e8f99;
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.04em;
+}
+
+.form-field {
+  margin-bottom: 8px;
+  position: relative;
+}
+.form-input {
+  padding-left: 38px;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  outline: transparent;
+  transition: border-color 300ms ease-in;
+}
+.form-input:focus,
+.form-area:focus {
+  border-color: #4d5ae5;
+}
+.form-area {
+  resize: none;
+  border-radius: 4px;
+  min-width: 360px;
+  min-height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  outline: transparent;
+  transition: border-color 300ms ease-in;
+}
+.form-area::placeholder {
+  padding: 8px 0px 0px 16px;
+  font-size: 12px;
+  color: rgba(46, 47, 66, 0.4);
+  line-height: 1.166;
+  letter-spacing: 0.04em;
+}
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  transition: fill 300ms ease-in;
+}
+
+.form-input:focus + .form-icon {
+  fill: #4d5ae5;
+}
+
+.span-privacy {
+  color: #4d5ae5;
+  text-decoration-line: underline;
+}
+.btn-send {
+  display: block;
+
+  border: none;
+  border-radius: 4px;
+  background-color: #4d5ae5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  padding: 18px 32px;
+  min-width: 169px;
+  margin: auto;
+  margin-top: 24px;
+
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  transition: obackground-color 150ms ease-in, visibility 150ms ease-in;
+}
+.btn-send:hover {
+  background-color: #404bbf;
+}
+
+/* Custom checkbox */
+
+.form-agreement {
+  display: block;
+
+  color: #8e8f99;
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.04em;
+
+  -webkit-user-select: none;
+}
+
+.form-agreement-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  transition: background-color 150ms ease-in, border-color 150ms ease-in;
+  cursor: pointer;
+}
+
+.checkbox:checked + .form-agreement-checkbox {
+  background-color: #404bbf;
+  border-color: transparent;
+}
+.form-agreemen-icon {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity 150ms cubic-bezier(0.8, 0, 0, 1.4),
+    transform 150ms cubic-bezier(0.8, 0, 0, 1.4) 75ms;
+}
+.checkbox:checked + .form-agreement-checkbox > .form-agreemen-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+.span-privacy {
+}
+/* #endregion ============================== modal window */
