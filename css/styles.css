@@ -458,22 +458,22 @@ button {
 }
 
 .form-subscribe {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .form-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
 
   background-color: #4d5ae5;
+  color: #ffffff;
   font-weight: 500;
   line-height: 24px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 
   min-width: 165px;
   padding: 8px 24px;
@@ -481,14 +481,23 @@ button {
   margin: auto;
   border-radius: 4px;
 }
-.footer-form-input::placeholder {
-  padding-left: 16px;
-  color: #fff;
+
+.footer-form-input {
   font-size: 12px;
-  line-height: 24px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  color: #ffffff;
+}
+.footer-form-input::placeholder {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 2;
   letter-spacing: 0.04em;
 }
 .form-btn-icon {
+  margin-left: 16px;
+  height: 24px;
   fill: white;
 }
 /* #endregion footer */ /* #endregion footer */
