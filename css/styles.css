@@ -383,6 +383,12 @@ button {
 
 /* #region ================================footer */
 
+.footer-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -407,13 +413,12 @@ button {
   width: 264px;
   line-height: 24px;
   letter-spacing: 0.32px;
-}
-.footer-box {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  margin-right: 120px;
 }
 
+.footer-social-media {
+  margin-right: auto;
+}
 .footer-icon-list {
   display: flex;
   gap: 16px;
