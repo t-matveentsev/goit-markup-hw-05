@@ -746,7 +746,9 @@ button {
 .form-area:focus + .checkbox-wrapper > .checkbox {
   border-color: #4d5ae5;
 }
-
+.ceckbox:fokus + .form-agreement > .form-agreement-checkbox {
+  border-color: #4d5ae5;
+}
 .checkbox:checked + .form-agreement > .form-agreement-checkbox {
   background-color: #404bbf;
   border-color: transparent;
